@@ -5,7 +5,7 @@ var moment = require('moment');                                 // for getting t
 var open = require('opn');                                      // for triggering report file in browser
            // for creating pre configured browser instance
 var path = require('path');
-var dir = require('mkdirp');                                    // for efficient report directories 
+const dire = require('mkdirp');                                    // for efficient report directories 
 
 const {promisify} = require('util');
 const readFile = promisify(fs.readFile);
@@ -22,9 +22,9 @@ create(json){
    var time = moment();
 var real = time.format('YYYY-MM_HH-mm-ss');
     
-    if (!fs.existsSync(path.resolve(`${_dirname}/real/html/')) {
+    if (!fs.existsSync(path.resolve(`${_dirname}/real/html/`))) {
     
-    dir(path.resolve(`${_dirname}/real/html/'), function (err) {
+    fs.mkdirSync(path.resolve(`${_dirname}/real/html/`), function (err) {
         if (err) console.error(err)
         else console.log('dir created')
     });
