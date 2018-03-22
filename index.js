@@ -46,7 +46,7 @@ var repo = $('#myTable');
         $(repo[2]).append("<tr><td>" + json.issues[i].type + "</td></tr>");
 
     }
-    fs.writeFile(dir+real+"\\html\\" + fileName + ".html", $.html(), function (err) {
+    fs.writeFile(path.resolve(`${_dirname}/real/html/result.html`)), $.html(), function (err) {
         if (err) {
             return console.log(err);
         }
