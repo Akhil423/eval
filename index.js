@@ -5,6 +5,7 @@ var moment = require('moment');                                 // for getting t
 var open = require('opn');                                      // for triggering report file in browser
            // for creating pre configured browser instance
 var path = require('path');
+var dir = require('mkdirp');                                    // for efficient report directories 
 
 const {promisify} = require('util');
 const readFile = promisify(fs.readFile);
@@ -16,7 +17,7 @@ const $ = cheerio.load(data);
 module.exports = class report{
 
 
-create(dir,json){
+create(json){
 
    var time = moment();
 var real = time.format('YYYY-MM_HH-mm-ss');
