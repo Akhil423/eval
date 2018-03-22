@@ -1,10 +1,34 @@
 
+const cheerio = require('cheerio');                               // for dealing with html dom elemnets
+var fs = require('fs');
+var moment = require('moment');                                 // for getting timestamp of system
+var open = require('opn');                                      // for triggering report file in browser
+           // for creating pre configured browser instance
+var path = require('path');
 
+const {promisify} = require('util');
+const readFile = promisify(fs.readFile);
+
+ 
+var data = await fs.readFile(path.resolve(`${__dirname}/report.html`), "utf8");
+
+const $ = cheerio.load(data);
 module.exports = class report{
 
 
 create(dir,json){
 
+   var time = moment();
+var real = time.format('YYYY-MM_HH-mm-ss');
+    
+    if (!fs.existsSync(path.resolve(`${_dirname}/real/html/')) {
+    
+    dir(path.resolve(`${_dirname}/real/html/'), function (err) {
+        if (err) console.error(err)
+        else console.log('dir created')
+    });
+}
+    
 var repo = $('#myTable');
     var stat = $('.w3-quarter h3');
   //  console.log(Object.keys(json.issues).length);
@@ -21,14 +45,14 @@ var repo = $('#myTable');
         $(repo[2]).append("<tr><td>" + json.issues[i].type + "</td></tr>");
 
     }
-    fs.writeFile("reports\\report"+real+"\\html\\" + fileName + ".html", $.html(), function (err) {
+    fs.writeFile(dir+real+"\\html\\" + fileName + ".html", $.html(), function (err) {
         if (err) {
             return console.log(err);
         }
         console.log("reports\report" + real + "\html\\" + fileName + ".html");
     });
 
-   open('D:\\Users\\kvarma\\source\\repos\\NodejsConsoleApp1\\NodejsConsoleApp1\\reports\\report'+real+'\\html\\result.html');
+   open(path.resolve(`${_dirname}/real/html/result.html`));
 
 
 }
