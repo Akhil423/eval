@@ -1,0 +1,39 @@
+{
+  "name": "eval",
+  "version": "1.0.0",
+  "description": "Creating Dynamic Test reports for automation testing",
+  "main": "index.js",
+  "dependencies": {
+    "exceljs": "^0.9.1",
+    "cheerio": "^1.0.0-rc.2",
+    "dialog": "^0.3.1",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.21.0",
+    "opn": "^5.2.0",
+    "pa11y": "^5.0.1",
+    "jquery": "^3.3.1",
+    "util": "^0.10.3",
+    "if": "^2.0.0",
+    "extentx": "^1.0.2",
+    "python": "^0.0.4",
+    "popups": "^1.1.3",
+    "sails": "^0.12.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhil423/eval.git"
+  },
+  "keywords": [
+    "nodejs_reports"
+  ],
+  "author": "Akhil Varma Kilishetti <akhilvarma423@gmail.com> (http://akhilvarma.in)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akhil423/eval/issues"
+  },
+  "homepage": "https://github.com/Akhil423/eval#readme"
+}
